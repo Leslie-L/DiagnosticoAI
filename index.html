@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DiagnosticoAI</title>
+    <link rel="stylesheet" href="./styles/styles.css">
+</head>
+<body>
+    <header>
+        <div class="title">
+            <span class="title-logo"></span>
+            <h1>DiagnosticoAI</h1>
+        </div>  
+    </header>
+    <main>
+        <sectcion  class="card">
+            <div class="card-image">
+                <img class="card-image_icon" src="./images/diabetes.png" alt="">
+            </div>
+            <div class="card-text">
+                <p class="card-text_title">Diagnostico Diabetes</p>
+            </div>
+        </sectcion>
+        <sectcion  class="card">
+            <div class="card-image">
+                <img class="card-image_icon" src="./images/ojo.png" alt="">
+            </div>
+            <div class="card-text">
+                <p class="card-text_title">Diagnostico Ocular</p>
+            </div>
+        </sectcion>
+        <sectcion  class="card">
+            <div class="card-image">
+                <img class="card-image_icon" src="./images/depresion.png" alt="">
+            </div>
+            <div class="card-text">
+                <p class="card-text_title">Diagnostico Depresion</p>
+            </div>
+        </sectcion>
+        <!------------------------------------------------------------------->
+        <!------------------------------------------------------------------->
+        <section class="modal-ocular hidden">
+            <div class="modal-ocular_form">
+                <div class="modal-ocular_form_x">
+                    <span>x</span>
+                </div>
+                <div class="modal-ocular_form_principal">
+                    <p>Diagnostico Ocular</p>
+                    <img src="./images/png.jpg" alt="">
+                    <label class="custom-file-upload">
+                        <input type="file"/>
+                        Cargar Image
+                    </label>
+                    <button class="button-analizar">Analizar Imagen</button>
+                </div>
+                <div class="results">
+                    <p class="res-title">Resultados</p>
+                    <ul>
+                        <il>Diagnostico: <p>Malisimo</p></il>
+                        <il>Probabilidad de diagnostico correcto <p>50%</p></il>
+                        <il>Precision: <p>74%</p></il>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <ul>
+            <li>info</li>
+            <li>info</li>
+            <li>info</li>
+        </ul>
+    </footer>
+    
+</body>
+</html>

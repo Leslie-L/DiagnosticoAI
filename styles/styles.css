@@ -1,0 +1,193 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    --background: #1771BF;
+    --white:#F2F2F2;
+    --black:#020202;
+    --button-send:#04ADBF;
+    --background-option:#63CAF2;
+    --text-normal:#CCD5D9;
+}
+body{
+    font-size: 62.5%;
+    font-family: sans-serif;
+}
+h1{
+    font-size: 2rem;
+}
+header{
+    width: 100%;
+    height: 20vh;
+    color: var(--white);
+    background-color: var(--background);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.title .title-logo{
+    width: 64px;
+    height: 64px;
+    background-image: url(../images/cerebro.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+main{
+    height: 70vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 15px;
+}
+/*
+CARDS
+*/
+.card{
+  width: 100%;
+  min-width: 300px;
+  height: 140px;
+  border: var(--background) solid 1px; 
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  cursor: pointer;
+}
+.card-image{
+    width: 33%;
+    height: auto;
+    background-color: var(--background-option);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card-text{
+    width: 66%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.card-text_title{
+    font-size: 1.6rem;
+}
+.card-image_icon{
+   width: 64px;
+   height: 64px;
+}
+/*
+FOOTER
+*/
+footer{
+    width: 100%;
+    height: 10vh;
+    color: var(--white);
+    background-color: var(--background);
+}
+/*
+Form Ocular
+*/
+.modal-ocular{
+    width: 100%;
+    height: 100%;
+    background-color: antiquewhite;
+    z-index: 3;
+    position: absolute;
+    top: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modal-ocular_form{
+    width: 95%;
+    height: 93%;
+    background-color: var(--text-normal);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+
+}
+.modal-ocular_form_x, 
+.modal-ocular_form_principal, 
+.results{
+    width: 100%;
+}
+.modal-ocular_form_x {
+    height: 50px;
+    position: relative;
+}
+.modal-ocular_form_x span{
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    width: 32px;
+    height: 32px;
+    background-image: url(../images/cancel.png);
+    background-repeat: no-repeat;
+    background-size: cover;    
+
+}
+.modal-ocular_form_principal {
+    padding: 25px  10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.modal-ocular_form_principal p{
+    padding-bottom: 25px;
+    font-size: 1.8rem;
+    text-align: center;
+}
+.modal-ocular_form_principal img{
+    width: 200px;
+    height: 200px;
+    padding-bottom: 25px;
+}
+
+button, .custom-file-upload{
+    width: 200px;
+    height: 40px;
+    color: var(--black);
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+.custom-file-upload{
+    padding-top: 11px;
+    text-align: center;
+    background-color: var(--background-option);
+    margin-bottom: 15px;
+}
+input[type="file"] {
+    display: none;
+}
+.button-analizar{
+    background-color: var(--button-send);
+    margin-bottom: 15px;
+}
+
+
+.results{
+    border: var(--black) solid 1px;
+    padding: 25px;
+    font-size: 1rem;
+}
+.results .res-title{
+text-align: center;
+}
+/*
+*/
+.hidden{
+    display: none;
+}
