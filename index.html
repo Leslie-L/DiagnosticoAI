@@ -15,15 +15,17 @@
         </div>  
     </header>
     <main>
-        <sectcion  class="card">
-            <div class="card-image">
-                <img class="card-image_icon" src="./images/diabetes.png" alt="">
-            </div>
-            <div class="card-text">
-                <p class="card-text_title">Diagnostico Diabetes</p>
-            </div>
-        </sectcion>
-        <sectcion  class="card">
+        <a href="./Pages/diabetes.html">
+            <sectcion  class="card" id="card_diabetes">
+                <div class="card-image">
+                    <img class="card-image_icon" src="./images/diabetes.png" alt="">
+                </div>
+                <div class="card-text">
+                    <p class="card-text_title">Diagnostico Diabetes</p>
+                </div>
+            </sectcion>
+        </a>
+        <sectcion  class="card" id="card_ojo">
             <div class="card-image">
                 <img class="card-image_icon" src="./images/ojo.png" alt="">
             </div>
@@ -31,7 +33,7 @@
                 <p class="card-text_title">Diagnostico Ocular</p>
             </div>
         </sectcion>
-        <sectcion  class="card">
+        <sectcion  class="card" id="card_depresion">
             <div class="card-image">
                 <img class="card-image_icon" src="./images/depresion.png" alt="">
             </div>
@@ -41,27 +43,66 @@
         </sectcion>
         <!------------------------------------------------------------------->
         <!------------------------------------------------------------------->
-        <section class="modal-ocular hidden">
+        <section class="modal-ocular hidden" id="modal-ocular">
             <div class="modal-ocular_form">
                 <div class="modal-ocular_form_x">
-                    <span>x</span>
+                    <span id="close"></span>
                 </div>
                 <div class="modal-ocular_form_principal">
                     <p>Diagnostico Ocular</p>
                     <img src="./images/png.jpg" alt="">
                     <label class="custom-file-upload">
                         <input type="file"/>
-                        Cargar Image
+                        Cargar Imagen
                     </label>
                     <button class="button-analizar">Analizar Imagen</button>
                 </div>
                 <div class="results">
-                    <p class="res-title">Resultados</p>
-                    <ul>
-                        <il>Diagnostico: <p>Malisimo</p></il>
-                        <il>Probabilidad de diagnostico correcto <p>50%</p></il>
-                        <il>Precision: <p>74%</p></il>
-                    </ul>
+                    <div class="result_card">
+                        <p class="res-title">Resultados</p>
+                        <div class="content">
+                            <div class="tables item">Diagnostico</div>
+                            <div class="tables item-result">Malisimo</div>
+                            <div class="tables item">Probabilidad de diagnostico correcto</div>
+                            <div class="tables item-result">50%</div>
+                            <div class="tables item">Precision:</div>
+                            <div class="tables item-result" >50%</div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-------------------------------------------------------------------->
+        <!-------------------------------------------------------------------->
+        <!-------------------------------------------------------------------->
+        <section class="modal-depresion hidden" id="modal-depresion">
+            <div class="modal-depresion_form">
+                <div class="modal-depresion_form_x">
+                    <span id="close_depresion"></span>
+                </div>
+                <div class="modal-depresion_form_principal">
+                    <p>Diagnostico depresion</p>
+                    <label for="tweet">
+                    Ingrese el tweet del paciente
+                    <textarea name="tweet" id="tweet" cols="80" rows="10" placeholder="Escriba el tweet que desea Analizar"></textarea>
+                    </label>
+                    
+                    <button class="button-analizar">Analizar Tweet</button>
+                </div>
+                <div class="results">
+                    <div class="result_card">
+                        <p class="res-title">Resultados</p>
+                        <div class="content">
+                            <div class="tables item">Diagnostico</div>
+                            <div class="tables item-result">Malisimo</div>
+                            <div class="tables item">Probabilidad de diagnostico correcto</div>
+                            <div class="tables item-result">50%</div>
+                            <div class="tables item">Precision:</div>
+                            <div class="tables item-result" >50%</div>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </section>
@@ -69,10 +110,10 @@
     <footer>
         <ul>
             <li>info</li>
-            <li>info</li>
-            <li>info</li>
+            <li>Leslie Centeno - leslie.centeno@galileo.edu</li>
+            <li>Arturo Yancos - yancosr@rocketmail.com</li>
         </ul>
     </footer>
-    
+    <script src="./src/index.js"></script>
 </body>
 </html>
