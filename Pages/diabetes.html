@@ -4,9 +4,184 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Diagnostico Diabetes</title>
 </head>
 <body>
-    hola soy diabetes
+    <head>
+        <a href="./../index.html">
+            <span>x</span>
+        </a>
+    </head>
+    <main>
+        <section class="container">
+            <div class="item">
+                <label for="highBP">High BP:</label>
+                <select id="highBP" name="highBP">
+                    <option value="0">No high</option>
+                    <option value="1">High BP</option>
+                </select>
+            </div>
+            <div class="item">
+                <label for="highChol">High Cholesterol:</label>
+                <select id="highChol" name="highChol">
+                    <option value="0">No high</option>
+                    <option value="1">High</option>
+                </select>
+            </div>
+            <div class="item">
+                <label for="cholCheck">Cholesterol check in 5 years:</label>
+                <select id="cholCheck" name="cholCheck">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+            </div>
+            <div class="item">
+                <label for="bmi">Body Mass Index</label>
+                <input type="number" min="0" max="98" id="bmi">
+            </div>
+            <div class="item">
+                <label for="smoker">Have you smoked at least 100 cigarettes in your entire life?</label>
+                <select id="smoker" name="smoker">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+            </div>
+            <div class="item">
+                <label for="stroke">(Ever told) you had a stroke.</label>
+                <select id="stroke" name="stroke">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+            </div>
+            <div class="item">
+                <label for="heartDiseaseorAttack">Coronary heart disease or myocardial infarction </label>
+                <select id="heartDiseaseorAttack" name="heartDiseaseorAttack">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+            </div>
+            <div class="item">
+                <label for="physActivity">Physical activity in past 30 days </label>
+                <select id="physActivity" name="physActivity">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+            </div>
+            <div class="item">
+                <label for="fruits">Consume Fruit 1 or more times per day</label>
+                <select id="fruits" name="fruits">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+            </div>
+            <div class="item">
+                <label for="veggies">Consume Vegetables 1 or more times per day</label>
+                <select id="veggies" name="veggies">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+            </div>
+            <div class="item">
+                <label for="hvyAlcoholConsump">Heavy drinkers </label>
+                <select id="hvyAlcoholConsump" name="hvyAlcoholConsump" >
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+            </div>
+            <div class="item">
+                <label for="anyHealthcare">Have any kind of health care coverage </label>
+                <select id="anyHealthcare" name="anyHealthcare" >
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+            </div>
+            <div class="item">
+                <label for="noDocbcCost">in the past 12 months, you needed to see a doctor but could not afford it?</label>
+                <select id="noDocbcCost" name="noDocbcCost" >
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+            </div>
+            <div class="item">
+                <label for="genHlth">Would you say that in general your health is</label>
+                <select id="genHlth" name="genHlth" >
+                    <option value="1">Excellent</option>
+                    <option value="2">Very good</option>
+                    <option value="3">Good</option>
+                    <option value="4">Fair</option>
+                    <option value="5">poor</option>
+                </select>
+            </div>
+            <div class="item">
+                <label for="mentHlth"> How many days during the past 30 days was your mental health not good? </label>
+                <input type="number" min="1" max="30" name="mentHlth" id="mentHlth">
+            </div>
+            <div class="item">
+                <label for="physhlth"> How many days during the past 30 days was your physical health not good? </label>
+                <input type="number" min="1" max="30" name="physhlth" id="physhlth">
+            </div>
+            <div class="item">
+                <label for="diffWalk">Do you have serious difficulty walking or climbing stairs?</label>
+                <select id="diffWalk" name="diffWalk" >
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+            </div>
+            <div class="item">
+                <label for="sex">Sex</label>
+                <select id="sex" name="sex" >
+                    <option value="0">Female</option>
+                    <option value="1">Male</option>
+                </select>
+            </div>
+            <div class="item">
+                <label for="age">Age Category</label>
+                <select id="age" name="age" >
+                    <option value="1">18-24</option>
+                    <option value="2">25-30</option>
+                    <option value="2">31-36</option>
+                    <option value="2">37-42</option>
+                    <option value="2">43-48</option>
+                    <option value="2">49-54</option>
+                    <option value="2">55-60</option>
+                    <option value="2">61-66</option>
+                    <option value="2">67-72</option>
+                    <option value="2">73-78</option>
+                    <option value="2">25-30</option>
+                </select>
+            </div>
+            <div class="item">
+                <label for="education">Education</label>
+                <select id="education" name="education" >
+                    <option value="1">Never attended school</option>
+                    <option value="2">Elementary</option>
+                    <option value="3">Some high school</option>
+                    <option value="4">High school graduate</option>
+                    <option value="5">Some college or technical schoo</option>
+                    <option value="6">College graduate</option>
+                </select>
+            </div>
+            <div class="item">
+                <label for="income">Income</label>
+                <select id="income" name="income" >
+                    <option value="1">less than $10,000 </option>
+                    <option value="2">Elementary</option>
+                    <option value="3">Some high schoo</option>
+                    <option value="4">High school graduate</option>
+                    <option value="5">less than $35,000</option>
+                    <option value="6">College graduate</option>
+                    <option value="7">Some college</option>
+                    <option value="8"> $75,000 or more</option>
+                </select>
+            </div>
+        </section>
+        <section></section>
+    </main>
+    <footer>
+        <ul>
+            <li>infor</li>
+            <li>info</li>
+        </ul>
+    </footer>
 </body>
 </html>
