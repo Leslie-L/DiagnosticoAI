@@ -50,9 +50,9 @@
                 </div>
                 <div class="modal-ocular_form_principal">
                     <p>Diagnostico Ocular</p>
-                    <img src="./images/png.jpg" alt="">
+                    <img id="ojo_nuevo" src="./images/png.png" alt="">
                     <label class="custom-file-upload">
-                        <input type="file"/>
+                        <input type="file" onchange="cambiarFoto()" accept="image/png" id="archivo" />
                         Cargar Imagen
                     </label>
                     <button class="button-analizar">Analizar Imagen</button>
