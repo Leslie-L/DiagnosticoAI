@@ -52,10 +52,13 @@
                     <p>Diagnostico Ocular</p>
                     <img id="ojo_nuevo" src="./images/png.png" alt="">
                     <label class="custom-file-upload">
-                        <input type="file" onchange="cambiarFoto()" accept="image/png" id="archivo" />
-                        Cargar Imagen
+                        
+                            <input type="file" onchange="cambiarFoto()" accept="image/png" id="archivo" />
+                            Cargar Imagen
+        
+                        
                     </label>
-                    <button class="button-analizar">Analizar Imagen</button>
+                    <button class="button-analizar" id="modelo_ojo">Analizar Imagen</button>
                 </div>
                 <div class="results">
                     <div class="result_card">
@@ -88,7 +91,7 @@
                     <textarea name="tweet" id="tweet" cols="80" rows="10" placeholder="Escriba el tweet que desea Analizar"></textarea>
                     </label>
                     
-                    <button class="button-analizar">Analizar Tweet</button>
+                    <button class="button-analizar" id="modelo_depresion">Analizar Tweet</button>
                 </div>
                 <div class="results">
                     <div class="result_card">

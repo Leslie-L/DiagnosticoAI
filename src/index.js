@@ -1,3 +1,4 @@
+
 const ojo = document.getElementById('card_ojo');
 const modal_ocular =document.getElementById('modal-ocular');
 const closeM =document.getElementById('close');
@@ -43,3 +44,55 @@ function cambiarFoto(){
     }
     reader.readAsDataURL(input.files[0]);
   }
+
+
+  /*
+    CONSUMO DE APIS
+  */
+
+/*========================= Modelo ocular =========================== */
+const modelo_ojo = document.getElementById("modelo_ojo");
+const API_URL_UPLOAD = 'http://127.0.0.1:8000/model/eye';
+
+modelo_ojo.addEventListener('click', ()=>modelo_ocular());
+
+async function modelo_ocular() {
+    const image = document.getElementById('archivo');
+    const formData = new FormData();
+    formData.append('image', image.files[0]);
+
+    const res = await fetch(API_URL_UPLOAD, {
+        method: 'POST',
+        body: formData,
+    });
+    
+    /*const res = await fetch('http://127.0.0.1:8000');*/
+    const data = await res.json();
+    //console.log(data);
+}
+
+
+/*========================= Modelo Depresion =========================== */
+const bdepresion = document.getElementById("modelo_depresion");
+const API_URL_DEPRESION = 'http://127.0.0.1:8000/model/depresion';
+bdepresion.addEventListener('click', ()=>modelo_depresion());
+
+async function modelo_depresion() {
+
+    const tweet = document.getElementById('tweet').value;
+    //console.log(tweet);
+    const peticion = JSON.stringify({
+        tweet:tweet
+    });
+    //console.log(peticion)
+    const res = await fetch(API_URL_DEPRESION, {
+        method: 'POST',
+        headers:{
+            "Content-Type":"application/json"
+        },
+        body: peticion,
+    });
+    
+    const data = await res.json();
+    //console.log(data);
+}

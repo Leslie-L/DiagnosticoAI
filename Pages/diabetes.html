@@ -116,11 +116,11 @@
             </div>
             <div class="item">
                 <label for="mentHlth"> How many days during the past 30 days was your mental health not good? </label>
-                <input type="number" min="1" max="30" name="mentHlth" id="mentHlth">
+                <input type="number" min="0" max="30" name="mentHlth" id="mentHlth">
             </div>
             <div class="item">
                 <label for="physhlth"> How many days during the past 30 days was your physical health not good? </label>
-                <input type="number" min="1" max="30" name="physhlth" id="physhlth">
+                <input type="number" min="0" max="30" name="physhlth" id="physhlth">
             </div>
             <div class="item">
                 <label for="diffWalk">Do you have serious difficulty walking or climbing stairs?</label>
@@ -140,16 +140,18 @@
                 <label for="age">Age Category</label>
                 <select id="age" name="age" >
                     <option value="1">18-24</option>
-                    <option value="2">25-30</option>
-                    <option value="2">31-36</option>
-                    <option value="2">37-42</option>
-                    <option value="2">43-48</option>
-                    <option value="2">49-54</option>
-                    <option value="2">55-60</option>
-                    <option value="2">61-66</option>
-                    <option value="2">67-72</option>
-                    <option value="2">73-78</option>
-                    <option value="2">25-30</option>
+                    <option value="2">25-39</option>
+                    <option value="3">30-34</option>
+                    <option value="4">35-39</option>
+                    <option value="5">40-44</option>
+                    <option value="6">45-49</option>
+                    <option value="7">50-54</option>
+                    <option value="8">55-59</option>
+                    <option value="9">60-64</option>
+                    <option value="10">65-69</option>
+                    <option value="11">70-74</option>
+                    <option value="12">75-79</option>
+                    <option value="13">80 or older</option>
                 </select>
             </div>
             <div class="item">
@@ -167,18 +169,18 @@
                 <label for="income">Income</label>
                 <select id="income" name="income" >
                     <option value="1">less than $10,000 </option>
-                    <option value="2">Elementary</option>
-                    <option value="3">Some high schoo</option>
-                    <option value="4">High school graduate</option>
+                    <option value="2">less than $15,000 </option>
+                    <option value="3">less than $20,000 </option>
+                    <option value="4">less than $25,000 </option>
                     <option value="5">less than $35,000</option>
-                    <option value="6">College graduate</option>
-                    <option value="7">Some college</option>
+                    <option value="6">less than $50,000 </option>
+                    <option value="7">less than $75,000 </option>
                     <option value="8"> $75,000 or more</option>
                 </select>
             </div>
         </section>
         <section class="controles">
-            <button>Analizar Paciente</button>
+            <button id="procesar">Analizar Paciente</button>
         </section>
         <section class="results hidden"> 
         </section>
@@ -189,5 +191,6 @@
             <li>info</li>
         </ul>
     </footer>
+    <script src="./../src/diabetes.js"></script>
 </body>
 </html>

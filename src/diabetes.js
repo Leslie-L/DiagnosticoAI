@@ -1,0 +1,84 @@
+/*
+    highBP
+    highChol
+    cholCheck
+    bmi
+    smoker
+    stroke
+    heartDiseaseorAttack
+    physActivity
+    fruits
+    veggies
+    hvyAlcoholConsump
+    anyHealthcare
+    noDocbcCost
+    genHlth
+    mentHlth
+    physhlth
+    diffWalk
+    sex 
+    age 
+    education
+    income
+*/
+const API_URL= 'http://127.0.0.1:8000/model/diabetes';
+const botonProcesar= document.getElementById("procesar");
+botonProcesar.addEventListener('click',()=>modeloDiabetes());
+
+async function modeloDiabetes(){
+    const highBP = document.getElementById("highBP").value;
+    const highChol = document.getElementById("highChol").value;
+    const cholCheck = document.getElementById("cholCheck").value;
+    const bmi = document.getElementById("bmi").value;
+    const smoker = document.getElementById("smoker").value;
+    const stroke = document.getElementById("stroke").value;
+    const heartDiseaseorAttack = document.getElementById("heartDiseaseorAttack").value;
+    const physActivity = document.getElementById("physActivity").value;
+    const fruits = document.getElementById("fruits").value;
+    const veggies = document.getElementById("veggies").value;
+    const hvyAlcoholConsump = document.getElementById("hvyAlcoholConsump").value;
+    const anyHealthcare = document.getElementById("anyHealthcare").value;
+    const noDocbcCost = document.getElementById("noDocbcCost").value;
+    const genHlth = document.getElementById("genHlth").value;
+    const mentHlth = document.getElementById("mentHlth").value;
+    const physhlth = document.getElementById("physhlth").value;
+    const diffWalk = document.getElementById("diffWalk").value;
+    const sex  = document.getElementById("sex").value;
+    const age  = document.getElementById("age").value;
+    const education = document.getElementById("education").value; 
+    const income = document.getElementById("income").value;
+    const peticion = JSON.stringify({
+        highBP: Number(highBP),
+        highChol: Number(highChol),
+        cholCheck: Number(cholCheck),
+        bmi: Number(bmi),
+        smoker: Number(smoker),
+        stroke:Number(stroke),
+        heartDiseaseorAttack:Number(heartDiseaseorAttack),
+        physActivity: Number(physActivity),
+        fruits:Number(fruits),
+        veggies: Number(veggies),
+        hvyAlcoholConsump: Number(hvyAlcoholConsump),
+        anyHealthcare: Number(anyHealthcare),
+        noDocbcCost: Number(noDocbcCost),
+        genHlth: Number(genHlth),
+        mentHlth: Number(mentHlth),
+        physhlth: Number(physhlth),
+        diffWalk: Number(diffWalk),
+        sex: Number(sex) ,
+        age: Number(age),
+        education: Number(education),
+        income: Number(income)
+    });
+    //console.log(peticion);
+    const res = await fetch(API_URL, {
+        method: 'POST',
+        headers:{
+            "Content-Type":"application/json"
+        },
+        body: peticion,
+    });
+    
+    const data = await res.json();
+    //console.log(data);
+}
