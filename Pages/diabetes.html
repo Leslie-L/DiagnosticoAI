@@ -14,8 +14,8 @@
         </a>
     </header>
     <main>
-        <h1>Formulario Diagnostico de diabetes</h1>
-        <section class="container">
+        <h1 class="" id="titulo_form">Formulario Diagnostico de diabetes</h1>
+        <section class="container" id="principal_form">
             <div class="item">
                 <label for="highBP">High BP:</label>
                 <select id="highBP" name="highBP">
@@ -179,10 +179,23 @@
                 </select>
             </div>
         </section>
-        <section class="controles">
+        <section class="controles " id="button_principal">
             <button id="procesar">Analizar Paciente</button>
         </section>
-        <section class="results hidden"> 
+        <section class="results hidden" id="res_diabetes"> 
+            <h1>Resultados del Analisis</h1>
+            <div class="results-table">
+
+                <div class="title">Diagnostico</div>
+                <div  class="resp" id="diabetes_res">Enfermo</div>
+                
+                <div class="title">Probabilidad de diagnostico correcto</div>
+                <div  class="resp" id="diabetes_pCorrecto">75%</div>
+                
+                <div class="title">Precision</div>
+                <div class="resp" id="diabetes_precision">85%</div>
+                
+            </div>
         </section>
     </main>
     <footer>

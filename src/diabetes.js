@@ -80,5 +80,21 @@ async function modeloDiabetes(){
     });
     
     const data = await res.json();
+    resultados_diabetes(data);
     //console.log(data);
+}
+
+function resultados_diabetes(data) {
+    const titulo_form= document.getElementById("titulo_form");
+    titulo_form.classList.add("hidden");
+    const principal_form = document.getElementById("principal_form");
+    principal_form.classList.add("hidden")
+    const button_principal = document.getElementById("button_principal");
+    button_principal.classList.add("hidden");
+
+    const res_diabetes = document.getElementById("res_diabetes");
+    res_diabetes.classList.remove("hidden");
+    document.getElementById("diabetes_res").innerText = data?.Diagnostico;
+    document.getElementById("diabetes_pCorrecto").innerText=data?.pCorrecto;
+    document.getElementById("diabetes_precision").innerText=data?.precision;
 }

@@ -68,9 +68,16 @@ async function modelo_ocular() {
     
     /*const res = await fetch('http://127.0.0.1:8000');*/
     const data = await res.json();
+    resultados_ocular(data);
     //console.log(data);
 }
-
+function resultados_ocular(data) {
+    const res_ocular = document.getElementById("res_ocular");
+    res_ocular.classList.remove("hidden");
+    document.getElementById("ocular_res").innerText = data?.Diagnostico;
+    document.getElementById("ocular_pCorrecto").innerText=data?.pCorrecto;
+    document.getElementById("ocular_precision").innerText=data?.precision;
+}
 
 /*========================= Modelo Depresion =========================== */
 const bdepresion = document.getElementById("modelo_depresion");
@@ -94,5 +101,14 @@ async function modelo_depresion() {
     });
     
     const data = await res.json();
+    resultados_depresion(data);
     //console.log(data);
+}
+
+function resultados_depresion(data) {
+    const res_depresion = document.getElementById("res_depresion");
+    res_depresion.classList.remove("hidden");
+    document.getElementById("depresion_res").innerText = data?.Diagnostico;
+    document.getElementById("depresion_pCorrecto").innerText=data?.pCorrecto;
+    document.getElementById("depresion_precision").innerText=data?.precision;
 }
