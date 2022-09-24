@@ -52,7 +52,7 @@ function cambiarFoto(){
 
 /*========================= Modelo ocular =========================== */
 const modelo_ojo = document.getElementById("modelo_ojo");
-const API_URL_UPLOAD = 'http://127.0.0.1:8000/model/eye';
+const API_URL_UPLOAD = 'http://35.90.181.190/model/eye';
 
 modelo_ojo.addEventListener('click', ()=>modelo_ocular());
 
@@ -65,10 +65,13 @@ async function modelo_ocular() {
         method: 'POST',
         body: formData,
     });
+    if(res.status!==200){
+        alert("Ocurrio un error");
+    }else{
+        const data = await res.json();
+        resultados_ocular(data);
+    }
     
-    /*const res = await fetch('http://127.0.0.1:8000');*/
-    const data = await res.json();
-    resultados_ocular(data);
     //console.log(data);
 }
 function resultados_ocular(data) {
@@ -76,22 +79,24 @@ function resultados_ocular(data) {
     res_ocular.classList.remove("hidden");
     document.getElementById("ocular_res").innerText = data?.Diagnostico;
     document.getElementById("ocular_pCorrecto").innerText=data?.pCorrecto;
-    document.getElementById("ocular_precision").innerText=data?.precision;
+    //document.getElementById("ocular_precision").innerText=data?.precision;
 }
 
 /*========================= Modelo Depresion =========================== */
 const bdepresion = document.getElementById("modelo_depresion");
-const API_URL_DEPRESION = 'http://127.0.0.1:8000/model/depresion';
+const API_URL_DEPRESION = 'http://35.90.181.190/model/depresion';
 bdepresion.addEventListener('click', ()=>modelo_depresion());
 
 async function modelo_depresion() {
 
     const tweet = document.getElementById('tweet').value;
-    //console.log(tweet);
+    if (tweet.length<=0 || tweet=="") {
+        alert("Ingrese un tweet");
+        return;
+    }
     const peticion = JSON.stringify({
         tweet:tweet
     });
-    //console.log(peticion)
     const res = await fetch(API_URL_DEPRESION, {
         method: 'POST',
         headers:{
@@ -99,9 +104,13 @@ async function modelo_depresion() {
         },
         body: peticion,
     });
+    if(res.status!==200){
+        alert("Ocurrio un error");
+    }else{
+        const data = await res.json();
+        resultados_depresion(data);
+    }
     
-    const data = await res.json();
-    resultados_depresion(data);
     //console.log(data);
 }
 
@@ -110,5 +119,5 @@ function resultados_depresion(data) {
     res_depresion.classList.remove("hidden");
     document.getElementById("depresion_res").innerText = data?.Diagnostico;
     document.getElementById("depresion_pCorrecto").innerText=data?.pCorrecto;
-    document.getElementById("depresion_precision").innerText=data?.precision;
+    //document.getElementById("depresion_precision").innerText=data?.precision;
 }

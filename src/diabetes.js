@@ -21,7 +21,7 @@
     education
     income
 */
-const API_URL= 'http://127.0.0.1:8000/model/diabetes';
+const API_URL= 'http://35.90.181.190/model/diabetes';
 const botonProcesar= document.getElementById("procesar");
 botonProcesar.addEventListener('click',()=>modeloDiabetes());
 
@@ -47,6 +47,16 @@ async function modeloDiabetes(){
     const age  = document.getElementById("age").value;
     const education = document.getElementById("education").value; 
     const income = document.getElementById("income").value;
+    if (isNaN(bmi)||bmi==""||bmi==null|| bmi<0 || bmi>98 ) {
+        alert("Ingrese un valor correcto");
+    }
+    if (isNaN(mentHlth) || mentHlth==""||mentHlth==null|| mentHlth<0 || mentHlth>98 ) {
+        alert("Ingrese un valor correcto");
+    }
+    if (isNaN(physhlth)|| physhlth=="" ||physhlth==null|| physhlth<0 || physhlth>98 ) {
+        alert("Ingrese un valor correcto");
+    }
+    
     const peticion = JSON.stringify({
         highBP: Number(highBP),
         highChol: Number(highChol),
@@ -70,7 +80,7 @@ async function modeloDiabetes(){
         education: Number(education),
         income: Number(income)
     });
-    //console.log(peticion);
+    
     const res = await fetch(API_URL, {
         method: 'POST',
         headers:{
@@ -78,9 +88,13 @@ async function modeloDiabetes(){
         },
         body: peticion,
     });
+    if (res.status!==200) {
+        alert("Ocurrio un error");
+    }else{
+        const data = await res.json();
+        resultados_diabetes(data);
+    }
     
-    const data = await res.json();
-    resultados_diabetes(data);
     //console.log(data);
 }
 
@@ -96,5 +110,5 @@ function resultados_diabetes(data) {
     res_diabetes.classList.remove("hidden");
     document.getElementById("diabetes_res").innerText = data?.Diagnostico;
     document.getElementById("diabetes_pCorrecto").innerText=data?.pCorrecto;
-    document.getElementById("diabetes_precision").innerText=data?.precision;
+   // document.getElementById("diabetes_precision").innerText=data?.precision;
 }
