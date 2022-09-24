@@ -58,6 +58,10 @@ modelo_ojo.addEventListener('click', ()=>modelo_ocular());
 
 async function modelo_ocular() {
     const image = document.getElementById('archivo');
+    if( image.files.length == 0 ){
+        alert("No ha seleccionado una imagen");
+        return;
+    }
     const formData = new FormData();
     formData.append('image', image.files[0]);
 
