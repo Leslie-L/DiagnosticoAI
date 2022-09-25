@@ -21,7 +21,7 @@
     education
     income
 */
-const API_URL= 'http://35.90.181.190/model/diabetes';
+const API_URL= 'http://35.166.241.144/model/diabetes';
 const botonProcesar= document.getElementById("procesar");
 botonProcesar.addEventListener('click',()=>modeloDiabetes());
 

@@ -52,7 +52,7 @@ function cambiarFoto(){
 
 /*========================= Modelo ocular =========================== */
 const modelo_ojo = document.getElementById("modelo_ojo");
-const API_URL_UPLOAD = 'http://35.90.181.190/model/eye';
+const API_URL_UPLOAD = 'http://35.166.241.144/model/eye';
 
 modelo_ojo.addEventListener('click', ()=>modelo_ocular());
 
@@ -88,7 +88,7 @@ function resultados_ocular(data) {
 
 /*========================= Modelo Depresion =========================== */
 const bdepresion = document.getElementById("modelo_depresion");
-const API_URL_DEPRESION = 'http://35.90.181.190/model/depresion';
+const API_URL_DEPRESION = 'http://35.166.241.144/model/depresion';
 bdepresion.addEventListener('click', ()=>modelo_depresion());
 
 async function modelo_depresion() {
